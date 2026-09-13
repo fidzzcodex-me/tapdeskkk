@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "aos/dist/aos.css";
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+* {
+  border-color: theme("colors.line");
+}
+.dark * {
+  border-color: theme("colors.line-dark");
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+p, li {
+  line-height: 1.65;
+  max-width: 68ch;
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+}
+
+::selection {
+  background: #2f6fed;
+  color: #f7f7f5;
+}
+
+/* scrollbar tipis, bukan default browser gemuk */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #d8d5cf; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb { background: #2a2a2a; }
+
+/* partikel biru — HANYA dipakai di halaman site tapdesk, tidak pernah di panel in-page */
+.tapdesk-particle {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(47,111,237,0.55) 0%, rgba(47,111,237,0) 70%);
+  pointer-events: none;
+}
+
+@keyframes tapdesk-drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(12px, -18px); }
+  100% { transform: translate(0, 0); }
+}
